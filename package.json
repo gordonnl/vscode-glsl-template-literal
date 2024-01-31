@@ -1,0 +1,43 @@
+{
+    "name": "glsl-template-literal",
+    "displayName": "GLSL Template Literal",
+    "description": "VSCode extension that adds glsl syntax highlighting for template literals",
+    "version": "0.0.1",
+    "publisher": "Nathan Gordon",
+    "type": "module",
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "icon": "icon.png",
+    "repository": "none",
+    "contributes": {
+        "grammars": [
+            {
+                "path": "./syntaxes/grammar.json",
+                "scopeName": "inline.template-tagged-languages",
+                "injectTo": [
+                    "source.js",
+                    "source.mjs",
+                    "source.cjs",
+                    "source.js.jsx",
+                    "source.jsx",
+                    "source.ts",
+                    "source.tsx",
+                    "source.vue",
+                    "source.svelte",
+                    "source.svelte.js",
+                    "text.html.basic",
+                    "text.html.derivative",
+                    "text.html.markdown"
+                ],
+                "embeddedLanguages": {
+                    "meta.embedded.block.glsl": "glsl"
+                }
+            }
+        ]
+    },
+    "scripts": {
+        "build": "node ./tools/build.js",
+        "package": "vsce package"
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "fileTypes": [],
+    "injectionSelector": "L:source.js -comment -(string - meta.embedded), L:source.jsx -comment -(string - meta.embedded), L:source.js.jsx -comment -(string - meta.embedded), L:source.ts -comment -(string - meta.embedded), L:source.tsx -comment -(string - meta.embedded), L:source.svelte -comment -(string - meta.embedded), L:source.svelte.js -comment -(string - meta.embedded)",
+    "patterns": [
+        {
+            "begin": "(?i)(/)(?=(\\*\\s*\\b(?:glsl)\\b\\s*\\*/)\\s*`)",
+            "beginCaptures": {
+                "1": {
+                    "name": "comment.block.ts"
+                }
+            },
+            "end": "(`)",
+            "endCaptures": {
+                "0": {
+                    "name": "string.js"
+                },
+                "1": {
+                    "name": "punctuation.definition.string.template.end.js"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#commentTaggedTemplateLiteral-glsl"
+                }
+            ]
+        }
+    ],
+    "scopeName": "inline.template-tagged-languages",
+    "repository": {
+        "commentTaggedTemplateLiteral-glsl": {
+            "name": "string.js.taggedTemplate.commentTaggedTemplateLiteral.glsl",
+            "contentName": "meta.embedded.block.glsl",
+            "begin": "(?i)(\\*\\s*\\b(?:glsl)\\b\\s*\\*/)\\s*(`)",
+            "beginCaptures": {
+                "1": {
+                    "name": "comment.block.ts"
+                },
+                "2": {
+                    "name": "punctuation.definition.string.template.begin.js"
+                }
+            },
+            "end": "(?=`)",
+            "patterns": [
+                {
+                    "include": "source.glsl"
+                },
+                {
+                    "match": "."
+                }
+            ]
+        }
+    }
+}
