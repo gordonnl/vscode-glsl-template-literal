@@ -2,6 +2,8 @@ VSCode extension that adds glsl syntax highlighting for template literals using 
 
 Forked from [vscode-comment-tagged-templates](https://github.com/mjbvz/vscode-comment-tagged-templates) and edited for personal use.
 
+### Usage
+
 Requires GLSL language extension (such as [WebGL GLSL Editor](https://marketplace.visualstudio.com/items?itemName=raczzalan.webgl-glsl-editor)) to be installed.
 
 ```glsl
@@ -15,3 +17,13 @@ const fragment = /* glsl */ `
     }
 `;
 ```
+
+### Install
+
+In extensions panel, choose _'Install from VSIX...'_ from menu, then locate vsix file.
+
+### Build
+
+To re-package locally (generate .vsix), install vsce - `$ npm install -g @vscode/vsce`
+
+Then run npm script `package`.
